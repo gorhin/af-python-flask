@@ -1,0 +1,127 @@
+print
+print
+print
+print"************************************************************************"
+print" DOMINIC'S ADVENTURE "
+print"************************************************************************"
+
+# intro to text-based game
+
+
+print
+print
+print
+print "You wake up from a crazy night of shrums only to find"
+print "yourself wandering in a ghostly forest with your trustworthy"
+print "dog, named Rex. Your dog seems agitated and starts barking"
+print "relentlessly. You spot in the distance a vacant cabin."
+print "Due to your curiosity you promptly enter. You enter the house"
+print "and see a staircase leading downstairs, a rotting door, and a "
+print "ladder up to a loft."
+print
+inpute = raw_input("What would you like to do: ")
+def start():
+if inpute == "door()":
+door()
+print
+elif inpute == "ladder()":
+ladder()
+print
+elif inpute == "exit_house()":
+exit_house()
+print
+elif inpute == "commands()":
+commands()
+print
+elif inpute == "basement()":
+basement()
+print
+
+
+# defining classes
+
+def ladder():
+print "You climb the ladder and are now on the loft."
+print "Great view from up here."
+examine_ladder = raw_input("examine the loft y/n: ")
+if examine_ladder == "n":
+global key
+print "you go down the stairs, and are on the base floor again."
+elif examine_ladder == "y":
+gun = 0
+print "You find a chest that is locked. You need a key."
+print
+if key > 0:
+print
+print "You open the chest and find a .357 magnum."
+print "You take it."
+print
+gun = gun + 1
+print "You find a chest that is locked. You need a key."
+elif gun == 1:
+print "The chest is empty."
+def door():
+print "You enter the door and and get a whiff of some kind"
+print "of strong liquor."
+examine_door = raw_input("examine this room y/n: ")
+if examine_door == "y":
+key = 0
+print "You see a cabinet and open it to find a key."
+print "You take the key. Maybe you can open up something?"
+key = key + 1
+print
+elif examine_door == "n":
+print"you exit the door without examination"
+print
+
+def basement():
+print "You venture downstairs, and smell rotting flesh...."
+print "Is this man a murderer?"
+print
+examine_base = raw_input("Do you wish to examine the basement y/n: ")
+print
+if examine_base == "n":
+print "You don't examine the basement and and return upstairs."
+print
+elif examine_base == "y":
+ammo = 0
+print
+print "You examine the basement and find some pistol ammo"
+print
+print " _ "
+print " /-\ "
+print " (___) "
+print " ! ! PISTOL AMMO "
+print " ! ! "
+print " ! ! - six rounds "
+print " ! ! "
+print " ! ! "
+print " !___! "
+print " (_____) "
+ammo = ammo + 6
+print
+
+def exit_house():
+if gun == 0:
+print "You exit the house and see a crazy old man that wants to kill you."
+print "You're forced to retreat inside."
+print
+print " &&&&& "
+print " @@@@@@@@@ "
+print " 7^^^7 "
+print " I (O) (O) I "
+print " ( / \ ) "
+print " \ (*_*) / "
+print " \ --- / "
+print " \_I_/ "
+print
+if gun > 0 and ammo < 6:
+print "You hit the crazy man on the head with the gun and"
+print "retreat inside, locking the door behind you."
+print
+start()
+if gun > 0 and ammo > 0:
+print "You shoot the man in the face and steal his wallet."
+
+def commands():
+print "door(), ladder(), basement(), exit_house()"
